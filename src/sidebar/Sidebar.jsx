@@ -18,7 +18,7 @@ export default class Sidebar extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.screen.width < 1000 && this.state.active == true) {
+    if (window.innerWidth < 1000 && this.state.active == true) {
       document.querySelector("div.body-content").style.filter = "blur(10px)";
     } else {
       document.querySelector("div.body-content").style.filter = "none";
@@ -111,7 +111,7 @@ export default class Sidebar extends React.Component {
               </div>
             </div>
             <div className="wr-content flex-board py-3">
-              <div className="col-md-3 m-auto">
+              <div className="col-3 m-auto">
                 <CircularProgressbar
                   value={90}
                   text={`English`}
@@ -119,7 +119,7 @@ export default class Sidebar extends React.Component {
                   styles={{ text: { fill: "white" } }}
                 />
               </div>
-              <div className="col-md-3 m-auto">
+              <div className="col-3 m-auto">
                 <CircularProgressbar
                   value={100}
                   text={`Malayalam`}
