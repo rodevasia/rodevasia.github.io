@@ -16,6 +16,15 @@ export default class Sidebar extends React.Component {
     this.getMyAge();
     this.getScreenHieghWidth();
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.screen.width < 1000 && this.state.active == true) {
+      document.querySelector("div.body-content").style.filter = "blur(10px)";
+    } else {
+      document.querySelector("div.body-content").style.filter = "none";
+    }
+  }
+
   getMyAge() {
     let year = new Date();
     let myDob = new Date();
@@ -26,6 +35,11 @@ export default class Sidebar extends React.Component {
     this.setState({ ...this.state, age });
   }
   getScreenHieghWidth() {
+    if (window.innerWidth < 1000) {
+      this.setState({ ...this.state, active: false });
+    } else {
+      this.setState({ ...this.state, active: true });
+    }
     window.addEventListener("resize", () => {
       if (window.innerWidth < 1000) {
         this.setState({ ...this.state, active: false });
