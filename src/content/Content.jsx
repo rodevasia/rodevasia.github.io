@@ -38,10 +38,10 @@ export default class Content extends Component {
             </code>
           </div>
         </div>
-        <div className="col-10 m-auto works">
+        {/* <div className="col-10 m-auto works">
           <h6>Weekly Progress</h6>
           <WeeklyProgress />
-        </div>
+        </div> */}
         <div className="col-10 m-auto works">
           <h6>My Works</h6>
           <Projects />

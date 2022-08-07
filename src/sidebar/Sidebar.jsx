@@ -75,6 +75,12 @@ export default class Sidebar extends React.Component {
                 height={24}
                 viewBox="0 0 24 24"
                 fill="none"
+                style={{
+                  transition: "700ms",
+                  transform: this.state.bottom
+                    ? "rotate(180deg)"
+                    : "rotate(0deg)",
+                }}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
