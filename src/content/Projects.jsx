@@ -10,7 +10,7 @@ export default class Projects extends Component {
   }
   fetchWorks = async () => {
     const response = await fetch(
-      "https://https://docsploit.onrender.com/api/projects"
+      "https://docsploit.onrender.com/api/projects"
     );
     const result = await response.json();
     if (result.status === "success") {

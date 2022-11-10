@@ -10,7 +10,7 @@ export default class Experience extends Component {
   }
   fetchExperience = async () => {
     const response = await fetch(
-      "https://https://docsploit.onrender.com/api/experience"
+      "https://docsploit.onrender.com/api/experience"
     );
     const result = await response.json();
     if (result.status === "success") {
