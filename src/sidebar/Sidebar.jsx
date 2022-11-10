@@ -95,7 +95,12 @@ export default class Sidebar extends React.Component {
               </svg>
             </a>
             <div className="profile">
-              <img alt="profile" src={ProfilePic} height="100%" width="100%" />
+              <img
+                alt="profile"
+                src={"https://avatars.githubusercontent.com/u/35724736?v=4"}
+                height="100%"
+                width="100%"
+              />
             </div>
             <h5 className="profile-name">Robert Devasia</h5>
             <p className="carrote">~Developer</p>
