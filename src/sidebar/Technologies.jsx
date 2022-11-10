@@ -8,9 +8,7 @@ export default class Technologies extends Component {
   };
 
   async fetchData() {
-    const response = await fetch(
-      "https://docsploit-profile.herokuapp.com/api/skills"
-    );
+    const response = await fetch("https://docsploit.onrender.com/api/skills");
     const data = await response.json();
     if (data.status === "success") {
       let s = [];
