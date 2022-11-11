@@ -9,7 +9,7 @@ export default class Projects extends Component {
     this.fetchWorks();
   }
   fetchWorks = async () => {
-    const response = await fetch("http://localhost:5000/api/projects");
+    const response = await fetch("https://docsploit.onrender.com/api/projects");
     const result = await response.json();
     if (result.status === "success") {
       this.setState({ ...this.state, data: result.data });
