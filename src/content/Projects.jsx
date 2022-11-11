@@ -9,9 +9,7 @@ export default class Projects extends Component {
     this.fetchWorks();
   }
   fetchWorks = async () => {
-    const response = await fetch(
-      "https://docsploit.onrender.com/api/projects"
-    );
+    const response = await fetch("http://localhost:5000/api/projects");
     const result = await response.json();
     if (result.status === "success") {
       this.setState({ ...this.state, data: result.data });
@@ -29,11 +27,24 @@ export default class Projects extends Component {
               >
                 <h6 className="mt-3 text-left">{t.projectName}</h6>
                 <p>{t.desc}</p>
-                <h6 style={{ textAlign: "right", fontSize: "small" }}>
-                  Technologies
-                </h6>
-                <div className="works-card-tech">
-                  <p style={{ textAlign: "right" }}>{t.technologies}</p>
+                <div className="row text-white">
+                  <a
+                    href={t.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="col-md-6 text-secondary my-auto"
+                    style={{ fontSize: "small" }}
+                  >
+                    <i>{t.link}</i>
+                  </a>
+                  <div className="col-md-6 text-white">
+                    <h6 style={{ textAlign: "right", fontSize: "small" }}>
+                      Technologies
+                    </h6>
+                    <div className="works-card-tech">
+                      <p style={{ textAlign: "right" }}>{t.technologies}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             );

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Experience from "./Experience";
 import Footer from "./Footer";
 import Projects from "./Projects";
-import WeeklyProgress from "./WeeklyProgress";
 
 export default class Content extends Component {
   componentDidMount() {

@@ -128,7 +128,7 @@ body {
   z-index: 100;
   backdrop-filter: blur(10px);
 }
-.sider-card > a {
+.sider-card > i {
   text-decoration: none;
   color: var(--text) !important;
   position: absolute;

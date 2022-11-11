@@ -1,7 +1,6 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 import Technologies from "./Technologies";
-import ProfilePic from "../assets/profile.jpg";
 import { CircularProgressbar } from "react-circular-progressbar";
 export default class Sidebar extends React.Component {
   state = {
@@ -18,7 +17,7 @@ export default class Sidebar extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (window.innerWidth < 1000 && this.state.active == true) {
+    if (window.innerWidth < 1000 && this.state.active === true) {
       document.querySelector("div.body-content").style.filter = "blur(10px)";
     } else {
       document.querySelector("div.body-content").style.filter = "none";
@@ -69,7 +68,7 @@ export default class Sidebar extends React.Component {
           className="sider-container"
         >
           <div className="sider-card">
-            <a onClick={() => this.handleToggle(!this.state.bottom)}>
+            <i onClick={() => this.handleToggle(!this.state.bottom)}>
               <svg
                 width={24}
                 height={24}
@@ -93,7 +92,7 @@ export default class Sidebar extends React.Component {
                   fill="#fafafc"
                 />
               </svg>
-            </a>
+            </i>
             <div className="profile">
               <img
                 alt="profile"
