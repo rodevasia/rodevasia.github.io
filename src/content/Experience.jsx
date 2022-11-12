@@ -23,7 +23,7 @@ export default class Experience extends Component {
       return (
         <div className="timeline">
           <ul>
-            {this.state.data.map((t) => {
+            {this.state.data.reverse().map((t) => {
               return (
                 <li key={t.jobTitle}>
                   <div className="content">
@@ -31,7 +31,7 @@ export default class Experience extends Component {
                     <p>{t.company}</p>
                   </div>
                   <div className="point" />
-                  <div className="date">
+                  <div className="date ">
                     <h4>
                       {t.startMonth}&nbsp;{t.startYear}&nbsp;-
                       {t.startMonth === t.endMonth && t.startYear === t.endYear

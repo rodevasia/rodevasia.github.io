@@ -491,9 +491,9 @@ p[content="company"] {
 
 .timeline ul li .date h4 {
   background: var(--gradient);
-  width: 100px;
+  width: 150px;
   text-align: center;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border-radius: 10px;
   font-family: var(--font);
   color: var(--text);

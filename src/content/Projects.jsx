@@ -19,7 +19,7 @@ export default class Projects extends Component {
     if (this.state.data.length > 0) {
       return (
         <div className="row">
-          {this.state.data.map((t) => {
+          {this.state.data.reverse().map((t) => {
             return (
               <div
                 key={t.projectName}
