@@ -1,22 +1,16 @@
 import React, { Component } from "react";
 import { Spinner } from "react-bootstrap";
+import { fetchExperience } from "./connection";
 
 export default class Experience extends Component {
   state = {
     data: [],
   };
   componentDidMount() {
-    this.fetchExperience();
+    fetchExperience().then((exp) => {
+      this.setState({ ...this.state, data: exp });
+    });
   }
-  fetchExperience = async () => {
-    const response = await fetch(
-      "https://docsploit.onrender.com/api/experience"
-    );
-    const result = await response.json();
-    if (result.status === "success") {
-      this.setState({ ...this.state, data: result.data });
-    }
-  };
 
   render() {
     if (this.state.data.length > 0) {

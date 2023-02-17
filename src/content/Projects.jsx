@@ -1,20 +1,15 @@
 import React, { Component } from "react";
 import { Spinner } from "react-bootstrap";
+import { fetchWorks } from "./connection";
 
 export default class Projects extends Component {
   state = {
     data: [],
   };
   componentDidMount() {
-    this.fetchWorks();
+    fetchWorks().then((works) => this.setState({ ...this.state, data: works }));
   }
-  fetchWorks = async () => {
-    const response = await fetch("https://docsploit.onrender.com/api/projects");
-    const result = await response.json();
-    if (result.status === "success") {
-      this.setState({ ...this.state, data: result.data });
-    }
-  };
+
   render() {
     if (this.state.data.length > 0) {
       return (

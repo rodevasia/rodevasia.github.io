@@ -1,27 +1,22 @@
 import React, { Component } from "react";
 import { Spinner } from "react-bootstrap";
 import SkillBadge from "../components/SkillBadge";
+import { fetchSkills } from "../content/connection";
 
 export default class Technologies extends Component {
   state = {
     data: [],
   };
 
-  async fetchData() {
-    const response = await fetch("https://docsploit.onrender.com/api/skills");
-    const data = await response.json();
-    if (data.status === "success") {
+  componentDidMount() {
+    fetchSkills().then((skills) => {
       let s = [];
-      for (let i = 0; i < data.data.length; i += 3) {
-        const chunk = data.data.slice(i, i + 3);
+      for (let i = 0; i < skills.length; i += 3) {
+        const chunk = skills.slice(i, i + 3);
         s.push(chunk);
       }
       this.setState({ ...this.state, data: s });
-    }
-  }
-
-  componentDidMount() {
-    this.fetchData();
+    });
   }
   render() {
     if (this.state.data.length > 0) {
