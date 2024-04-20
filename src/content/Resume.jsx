@@ -18,7 +18,7 @@ function Resume() {
   return (
     <main className="container position-relative bg-light rounded py-5 d-flex flex-column px-5">
       <h1 className="fw-bold text-center">Robert Devasia</h1>
-    
+
       <section>
         <h3 className="fw-light fs-5 text-center">
           Software Engineer | 3 Years of Experience
@@ -61,23 +61,25 @@ function Resume() {
           </div>
           <div className="col-4">
             <p className="fw-500 fs-5 border-bottom pb-3">PROJECTS</p>
-            {works.map((item) => {
-              return (
-                <div
-                  key={item.id}
-                  onClick={() => {
-                    window.open(item.link, "_blank").focus();
-                  }}
-                  className="py-3  rounded card pointer col-12 px-3 shadow my-3"
-                >
-                  <p className="m-0 p-0 fw-bold  card-title">
-                    {item.projectName}
-                  </p>
-                  <p className="m-0 p-0 small">{item.technologies}</p>
-                  <p className="text-gray small">{item.desc}</p>
-                </div>
-              );
-            })}
+            {works
+              .sort((a, b) => a.priority - b.priority)
+              .map((item) => {
+                return (
+                  <div
+                    key={item.id}
+                    onClick={() => {
+                      window.open(item.link, "_blank").focus();
+                    }}
+                    className="py-3  rounded card pointer col-12 px-3 shadow my-3"
+                  >
+                    <p className="m-0 p-0 fw-bold  card-title">
+                      {item.projectName}
+                    </p>
+                    <p className="m-0 p-0 small">{item.technologies}</p>
+                    <p className="text-gray small">{item.desc}</p>
+                  </div>
+                );
+              })}
           </div>
           <div className="col-4">
             <p className="fw-500 fs-5 border-bottom pb-3">EXPERTISE</p>
