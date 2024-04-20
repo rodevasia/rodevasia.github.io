@@ -68,7 +68,9 @@ function Resume() {
                   <div
                     key={item.id}
                     onClick={() => {
-                      window.open(item.link, "_blank").focus();
+                      if (item.link) {
+                        window.open(item.link, "_blank").focus();
+                      }
                     }}
                     className="py-3  rounded card pointer col-12 px-3 shadow my-3"
                   >
