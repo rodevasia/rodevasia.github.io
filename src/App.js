@@ -2,14 +2,17 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-circular-progressbar/dist/styles.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import Sidebar from './sidebar/Sidebar';
-import Content from './content/Content';
+import Resume from './content/Resume';
 function App() {
   return (
-    <div className="container-port">
-      <Sidebar />
-      <Content />
-    </div>
+    <>
+    {/* // <div className="container-port"> */}
+      {/* <Sidebar /> */}
+      {/* <Content /> */}
+      <Resume />
+      
+    {/* </div> */}
+    </>
   );
 }
 
