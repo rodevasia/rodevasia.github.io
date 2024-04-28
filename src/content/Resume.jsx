@@ -24,8 +24,8 @@ function Resume() {
           Software Engineer | 3 Years of Experience
         </h3>
 
-        <div className="row mt-5 pt-2 justify-content-center">
-          <div className="col-4">
+        <div className=" d-lg-flex gap-4 mt-5 pt-2 justify-content-center">
+          <div className="col-lg-4">
             <p className="fw-500 fs-5 border-bottom pb-3">EXPERIENCE</p>
             {exp
               .sort((a, b) => {
@@ -59,7 +59,7 @@ function Resume() {
                 );
               })}
           </div>
-          <div className="col-4">
+          <div className="col-lg-4 col-md-">
             <p className="fw-500 fs-5 border-bottom pb-3">PROJECTS</p>
             {works
               .sort((a, b) => a.priority - b.priority)
@@ -83,7 +83,7 @@ function Resume() {
                 );
               })}
           </div>
-          <div className="col-4">
+          <div className="col-lg-4">
             <p className="fw-500 fs-5 border-bottom pb-3">EXPERTISE</p>
             <div className="py-3 rounded card pointer col-12 px-3 shadow my-3">
               <p className="m-0 p-0 fw-bold  card-title">Language</p>
